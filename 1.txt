@@ -1,0 +1,88 @@
+1
+
+Assume that we would like to model a personal computer (PC). A PC consists of a cabinet, which includes a chassis. A chassis on its turn is composed of a bus, a floppy disk drive, a memory unit, a CPU, and a power supply. A bus incorporates a network card. We would like to treat all the equipment components in a uniform way. The basic operations needed are netPrice and powerConsumption, which return the net price and the power consumption of each component respectively. In addition, each component may have its own specific semantics.
+
+a) Which design pattern can we apply for this problem?
+b)  Write a pseudo-code(Algorithm) for the same
+
+
+
+
+
+b)
+
+1) I have interface Cabinet.
+ 
+public interface Cabinet
+{
+	
+	public abstract String getPrice();
+	public abstract String getPowerConsumption();
+	public abstract String setPrice();
+	public abstract String setPowerConsumption();
+}	
+	
+
+
+2) I have created multiple subclass extending Cabinet.
+
+package com.journaldev.design.model;
+
+public class Bus extends Cabinet {
+
+	public Float netPrice ;
+	public int powerConsumption;
+
+	
+	
+	public String getPrice() {
+		return this.netPrice;
+	}
+	
+	public String getPowerConsumption() {
+		return this.powerConsumption;
+	}
+
+
+}
+
+
+
+public class CPU extends Cabinet {
+
+	public String netPrice ;
+	public String powerConsumption;
+
+	
+	
+	public String getPrice() {
+		return this.netPrice;
+	}
+	
+	public String getPowerConsumption() {
+		return this.powerConsumption;
+	}
+
+
+}
+
+public class network_card extends Bus {
+
+	public String netPrice ;
+	public String powerConsumption;
+
+	
+	
+	public String getPrice() {
+		return this.netPrice;
+	}
+	
+	public String getPowerConsumption() {
+		return this.powerConsumption;
+	}
+
+
+}
+
+
+
