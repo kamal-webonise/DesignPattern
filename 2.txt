@@ -1,0 +1,61 @@
+2) Clearly, we can have different configurations of PCs, for example a tower PC and a desktop PC. Furthermore, each type of PC may require specific components. We may have, for instance, specific cabinets and chassis for tower PCs and desktop PCs. Consequently, we assume that we will have a family of different products. This is illustrated in the next class hierarchies for cabinet and chassis. 
+
+There are actually two concerns here. First, we would like to ensure that a computer configuration always consists of parts that fit together. Second, we would not like to be bothered with details of the creation of computers.
+
+a) Which design pattern is applicable for this problem?
+b) Write a pseudo-code for the same
+
+
+a) Abstract Factory Pattern
+
+b)
+
+1) I have created two interface for Chesis and Cabinet.
+
+	public interface Chesis
+	{
+	public void setInfo();
+	public void getInfo();
+
+	}
+
+
+2) TowerChesis and DesktopChesis will implement chesis.
+
+	public class TowerChesis implements Chesis
+	{
+
+		public void setInfo();
+		public void getInfo();
+
+
+	}
+
+
+	
+3)  TowerCabinet and DesktopCabinet will implement cabinet.
+
+	public class TowerCabinet implements Cabinet
+	{
+
+		public void setInfo();
+		public void getInfo();
+
+	}
+
+
+	
+
+
+4) I have created a interface AbstactFactory to get factories for Cabinet and Chesis Objects.
+
+
+5) Tower and Desktop will implement AbstactFactory.
+
+6) Tower will communicate between TowerChesis and TowerCabinet for Tower product.
+
+7) Desktop will communicate between DesktopChesis and DesktopCabinet for Desktop product.
+
+8) Create object of TowerChesis, DesktopChesis,TowerCabinet and DesktopCabinet.
+
+9) create object of Tower and Desktop. Make sure Desktop will communicate between DesktopChesis and DesktopCabinet only and same for Tower.
